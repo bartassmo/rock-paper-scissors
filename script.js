@@ -1,3 +1,7 @@
+// var można dodać jako 1 ciąg, na początku słowo var później poszczególne zmienne oddzielane przecinkami
+// np.
+// var a = '',
+//     b = {};
 var computer = {
     name: 'computer',
     score: 0,
@@ -12,14 +16,16 @@ var player = {
 
 var round = 0;
 
-var display = {
-  computerPick: document.getElementById('computerPick'),
-  playerPick: document.getElementById('playerPick'),
-  gameResult: document.getElementById('gameResult')
+// Dodaj pola z tabeli , żeby wpisywać wynik
+var displayBlocks = {
+  computerPickBlock: document.getElementById('computerPick'),
+  playerPickBlock: document.getElementById('playerPick'),
+  gameResultBlock: document.getElementById('gameResult')
 };
 
 
 function newGame() {
+  // Może iść do globalnego scope'a
     var buttons = document.getElementsByClassName("pick-button");
 
     //Reset
@@ -29,8 +35,9 @@ function newGame() {
     player.pick = "";
     round = 0;
     player.name = prompt("Jak się nazywasz?", "Jan Kowalski");
+    //displayBlocks.playerName
     document.getElementById("playerName").innerHTML = player.name;
-    
+
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].style.visibility = 'visible';
     }
@@ -97,9 +104,9 @@ function checkResult() {
         }
 
     }
-    display.computerPick.innerHTML = computer.pick;
-    display.playerPick.innerHTML = player.pick;
-    display.gameResult.innerHTML = gameResult;
+    displayBlocks.computerPickBlock.innerHTML = computer.pick;
+    displayBlocks.playerPickBlock.innerHTML = player.pick;
+    displayBlocks.gameResultBlock.innerHTML = gameResult;
 
     if ((player.score >= 10) || (computer.score >= 10)) {
     //log the result
