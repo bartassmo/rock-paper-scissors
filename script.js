@@ -2,13 +2,22 @@ var computer = {
     name: 'computer',
     score: 0,
     pick: ''
-};
-var player = {
+    },
+    player = {
     name: '',
     score: 0,
     pick: ''
-};
-var round = 0;
+    },
+    round = 0,
+    buttons = document.getElementsByClassName("pick-button"),
+    displayBlocks = {
+    playerName: document.getElementById('playerName'),
+    computerPickBlock: document.getElementById('computerPick'),
+    playerPickBlock: document.getElementById('playerPick'),
+    gameResultBlock: document.getElementById('gameResult'),
+    playerScoreBlock: document.getElementById('playerScore'),
+    computerScoreBlock: document.getElementById('computerScore')
+    };
 
 function newGame() {
     //Reset
@@ -18,8 +27,8 @@ function newGame() {
     player.pick = "";
     round = 0;
     player.name = prompt("Jak się nazywasz?", "Jan Kowalski");
-    document.getElementById("playerName").innerHTML = player.name;
-    var buttons = document.getElementsByClassName("pick-button");
+    displayBlocks.playerName.innerHTML = player.name;
+    
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].style.visibility = 'visible';
     };
@@ -83,9 +92,9 @@ function checkResult() {
         }
 
     }
-    document.getElementById("computerPick").innerHTML = computer.pick
-    document.getElementById("playerPick").innerHTML = player.pick
-    document.getElementById("gameResult").innerHTML = gameResult;
+    displayBlocks.computerPickBlock.innerHTML = computer.pick;
+    displayBlocks.playerPickBlock.innerHTML = player.pick;
+    displayBlocks.gameResultBlock.innerHTML = gameResult;
     if ((player.score >= 10) || (computer.score >= 10)) {
     //log the result
         if (player.score > computer.score) {
@@ -96,7 +105,6 @@ function checkResult() {
         
         //hide buttons
         
-        var buttons = document.getElementsByClassName("pick-button");
         for(var i=0; i < buttons.length; i++) {
             buttons[i].style.visibility = 'hidden';
         };
