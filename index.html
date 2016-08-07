@@ -8,43 +8,43 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container-fluid">
+	<header class="text-center">
 	<h1>Kamień, Papier, Nożyce</h1>
-	<button class="btn btn-success" onclick="newGame()">Nowa gra</button>
-	<button class="btn btn-default pick-button" onclick="playerPick('rock')">	Kamień <i class="fa fa-hand-rock-o" aria-hidden="true">
-		 </i>
-	</button>
-	<button class="btn btn-default pick-button" onclick="playerPick('paper')"> Papier <i class="fa fa-hand-paper-o" aria-hidden="true"></i>	
-	</button>	
-	<button class="btn btn-default pick-button" onclick="playerPick('scissors')">
-    Nożyce <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
-</button>
-	<h3>Aktualna runda</h3> <br>
-	Komputer wybrał: <span id="computerPick"></span> <br>
-	Gracz wybrał: <span id="playerPick"></span> <br>
-	Wynik: <span id="gameResult"></span>
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th colspan="2" class="text-center">Wynik</th>
-			</tr>
-			<tr>
-				<th id="playerName">Gracz</th>
-				<th>Komputer</th>
-			</tr>
-		</thead>
-		<tbody><tr>
-			<td id="playerScore">0</td>
-			<td id="computerScore">0</td>
-		</tr></tbody>
-	</table>
-	<p id="roundResult"></p>
-	<div class="score">
-	    <p><h2>Aktualna runda:</h2><br>
-	        Komputer wybrał: <span id="computerPick"></span><br>
-	        Gracz wybrał: <span id="playerPick"></span><br>
-	        Wynik: <span id="gameResult"></span>
-	    </p>
-	</div>
+<button class="btn btn-success" onclick="newGame()">Nowa gra</button>
+<button class="btn btn-default pick-button" onclick="playerPick('rock')"> Kamień <i class="fa fa-hand-rock-o" aria-hidden="true">
+		 </i> </button>
+<button class="btn btn-default pick-button" onclick="playerPick('paper')"> Papier <i class="fa fa-hand-paper-o" aria-hidden="true"></i> </button>
+<button class="btn btn-default pick-button" onclick="playerPick('scissors')"> Nożyce <i class="fa fa-hand-scissors-o" aria-hidden="true"></i> </button>
+        </header>
+<section class="container">
+<div class="score">
+    <p>
+        <h2>Aktualna runda:</h2>
+        <br> Komputer wybrał: <span id="computerPick"></span>
+        <br> Gracz wybrał: <span id="playerPick"></span>
+        <br> Wynik: <span id="gameResult"></span> </p>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th colspan="2" class="text-center">Wynik</th>
+        </tr>
+        <tr>
+            <th id="playerName">Gracz</th>
+            <th>Komputer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="playerScore">0</td>
+            <td id="computerScore">0</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="roundResult" class="text-center text-uppercase"></h2>
+    </div>
+    </section>
 	<script src="script.js"></script>
 </body>
 </html>

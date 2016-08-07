@@ -105,6 +105,8 @@ function checkResult() {
     displayBlocks.computerPickBlock.innerHTML = computer.pick;
     displayBlocks.playerPickBlock.innerHTML = player.pick;
     displayBlocks.gameResultBlock.innerHTML = gameResult;
+    displayBlocks.playerScoreBlock.innerHTML = player.score;
+    displayBlocks.computerScoreBlock.innerHTML = computer.score;
 
     if ((player.score >= 10) || (computer.score >= 10)) {
     //log the result
