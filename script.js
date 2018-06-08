@@ -51,13 +51,13 @@ function computerPick() {
     //random number between 0 and 3
     switch (Math.floor(Math.random()*3)) {
         case 0:
-            computer.pick = "rock";
+            computer.pick = "Kamień";
         break;
         case 1:
-            computer.pick = "paper";
+            computer.pick = "Papier";
         break;
         case 2:
-            computer.pick = "scissors";
+            computer.pick = "Nożyce";
         break;
     }
 }
@@ -66,39 +66,39 @@ function checkResult() {
     //Check if there is a tie
     var gameResult;
     if (player.pick === computer.pick) {
-        gameResult = "tie!";
+        gameResult = "Remis!";
     }
-    else if (player.pick === "rock") {
+    else if (player.pick === "Kamień") {
     //if player chooses rock
-        if (computer.pick === "scissors") {
+        if (computer.pick === "Nożyce") {
             player.score++;
-            gameResult = "Player wins!";
+            gameResult = player.name + " wygrał!";
         }
-        else if (computer.pick === "paper") {
+        else if (computer.pick === "Papier") {
             computer.score++;
-            gameResult = "Computer wins!";
+            gameResult = "Komputer wygrał!";
         }
     }
-    else if (player.pick === "paper") {
+    else if (player.pick === "Papier") {
     //if player chooses paper
-        if (computer.pick === "rock") {
+        if (computer.pick === "Kamień") {
             player.score++;
-            gameResult = "Player wins!";
+            gameResult = player.name + " wygrał!";
         }
-        else if (computer.pick === "scissors") {
+        else if (computer.pick === "Nożyce") {
             computer.score++;
-            gameResult = "Computer wins!";
+            gameResult = "Komputer wygrał!";
         }
     }
-    else if (player.pick === "scissors") {
+    else if (player.pick === "Nożyce") {
     //if player chooses scissors
-        if (computer.pick === "paper") {
+        if (computer.pick === "Papier") {
             player.score++;
-            gameResult = "Player wins!";
+            gameResult = player.name + " wygrał!";
         }
-        else if (computer.pick === "rock") {
+        else if (computer.pick === "Kamień") {
             computer.score++;
-            gameResult = "Computer wins!";
+            gameResult = "Komputer wygrał!";
         }
 
     }
@@ -111,9 +111,9 @@ function checkResult() {
     if ((player.score >= 10) || (computer.score >= 10)) {
     //log the result
         if (player.score > computer.score) {
-            document.getElementById("roundResult").innerHTML = "player wins the game!";
+            document.getElementById("roundResult").innerHTML = player.name + " wygrał ten pojedynek!";
         } else {
-            document.getElementById("roundResult").innerHTML = "computer wins the game!";
+            document.getElementById("roundResult").innerHTML = "Komputer wygrał ten pojedynek!";
         }
 
         //hide buttons
