@@ -1,3 +1,10 @@
 .pick-button {
     visibility: hidden;
 }
+
+/* custom style */
+
+.game__btn {
+    display: block;
+    margin: 20px auto;
+}
